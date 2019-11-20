@@ -99,7 +99,7 @@ class FormCadastroCurriculo extends React.Component {
                     <Input id="email" type="text" placeholder="Digite o e-mail" onChange={this.handlerInputChange} value={this.state.candidato.email} />
                     <Label text="Objetivos:" />
                     <Input id="objetivos" type="text" placeholder="Digite o objetivo" onChange={this.handlerInputChange} value={this.state.candidato.objetivos} />
-                    <Button className="pure-button pure-button-primary" text="Gravar" />
+                    <Button className="pure-button pure-button-secondary" text="Gravar" />
                 </form>
                 <Button className="pure-button pure-button-primary" text="listar" onClick={this.listar}/>
                 <Footer text="Todos os direitos reservados" />
