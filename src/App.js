@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
-import FormCadastroCliente from './components/Form/CadastroCliente'
+import FormCadastroCurriculo from './components/Form/CadastroCurriculo'
 
 
 class App extends Component {
   render() {
     return (
       <div>
-        <FormCadastroCliente />
-
+        <FormCadastroCurriculo />
       </div>
     );
   }
