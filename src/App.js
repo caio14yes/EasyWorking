@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import FormCadastroCurriculo from './components/Form/CadastroCurriculo'
+import ListarCurriculo from './components/Listar';
 
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div>
         <FormCadastroCurriculo />
+        <ListarCurriculo />
       </div>
     );
   }
