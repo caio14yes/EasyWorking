@@ -34,18 +34,41 @@ class FormCadastroCurriculo extends React.Component {
     validateNome(nome) {
         return nome.length !== 0 && nome.length <= 100;
     }
+    validateIdade(idade) {
+        return idade.length !== 0 && idade.length <= 100;
+    }
+    validateCidade(cidade) {
+        return cidade.length !== 0 && cidade.length <= 100;
+    }
+    validateTelefone(telefone) {
+        return telefone.length !== 0 && telefone.length <= 100;
+    }
     validateEmail(email) {
         let re = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
         return re.test(email);
     }
-
+    validateObjetivos(objetivos) {
+        return objetivos.length !== 0 && objetivos.length <= 100;
+    }
     validate(candidatoState) {
         let erros = []
         if (!this.validateNome(candidatoState.nome)) {
             erros.push("Nome inválido")
         }
+        if (!this.validateIdade(candidatoState.idade)) {
+            erros.push("dado inválido")
+        }
+        if (!this.validateCidade(candidatoState.cidade)) {
+            erros.push("cidade inválido, complete o campo corretamente!")
+        }
+        if (!this.validateTelefone(candidatoState.telefone)) {
+            erros.push("Telefone inválido")
+        }
         if (!this.validateEmail(candidatoState.email)) {
             erros.push("Email inválido")
+        }
+        if (!this.validateObjetivos(candidatoState.objetivos)) {
+            erros.push("Dados inválidos")
         }
         this.setState(
             { validateErros: erros }
@@ -54,7 +77,11 @@ class FormCadastroCurriculo extends React.Component {
     }
     resetcandidatoState(candidatoState){
         candidatoState.nome = "";
+        candidatoState.idade = "";
+        candidatoState.cidade = "";
+        candidatoState.telefone = "";
         candidatoState.email = "";
+        candidatoState.objetivos = "";
         this.setState(
             { candidato: candidatoState }
         )
