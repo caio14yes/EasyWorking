@@ -56,10 +56,10 @@ class FormCadastroCurriculo extends React.Component {
             erros.push("Nome inválido")
         }
         if (!this.validateIdade(candidatoState.idade)) {
-            erros.push("dado inválido")
+            erros.push("Dado inválido")
         }
         if (!this.validateCidade(candidatoState.cidade)) {
-            erros.push("cidade inválido, complete o campo corretamente!")
+            erros.push("Cidade inválido, complete o campo corretamente!")
         }
         if (!this.validateTelefone(candidatoState.telefone)) {
             erros.push("Telefone inválido")
