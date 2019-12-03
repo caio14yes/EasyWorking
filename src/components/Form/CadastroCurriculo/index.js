@@ -3,7 +3,6 @@ import Label from '../../Label';
 import Input from '../../Input';
 import Button from '../../Button';
 import Header from '../../Header';
-import Footer from '../../Footer';
 import './../../../pure.css'
 
 class FormCadastroCurriculo extends React.Component {
