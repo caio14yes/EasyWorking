@@ -4,6 +4,7 @@ import Input from '../../Input';
 import Button from '../../Button';
 import Header from '../../Header';
 import './../../../pure.css'
+import Textarea from '../../Textarea';
 
 class FormCadastroCurriculo extends React.Component {
     constructor(props) {
@@ -11,11 +12,13 @@ class FormCadastroCurriculo extends React.Component {
         this.state = {
             candidato: {
                 nome: "",
-                idade:"",
-                cidade:"",
-                telefone:"",
+                idade: "",
+                cidade: "",
+                telefone: "",
                 email: "",
-                objetivos:""
+                objetivos: "",
+                formacad: "",
+                exprof: ""
             },
             validateErros: []
         }
@@ -49,6 +52,12 @@ class FormCadastroCurriculo extends React.Component {
     validateObjetivos(objetivos) {
         return objetivos.length !== 0 && objetivos.length <= 100;
     }
+    validateFormacad(formacad) {
+        return formacad.length !== 0 && formacad.length <= 100;
+    }
+    validateExprof(exprof) {
+        return exprof.length !== 0 && exprof.length <= 100;
+    }
     validate(candidatoState) {
         let erros = []
         if (!this.validateNome(candidatoState.nome)) {
@@ -69,18 +78,26 @@ class FormCadastroCurriculo extends React.Component {
         if (!this.validateObjetivos(candidatoState.objetivos)) {
             erros.push("Dados inválidos")
         }
+        if (!this.validateFormacad(candidatoState.formacad)) {
+            erros.push("Dados inválidos")
+        }
+        if (!this.validateExprof(candidatoState.exprof)) {
+            erros.push("Dados inválidos")
+        }
         this.setState(
             { validateErros: erros }
         )
         return erros;
     }
-    resetcandidatoState(candidatoState){
+    resetcandidatoState(candidatoState) {
         candidatoState.nome = "";
         candidatoState.idade = "";
         candidatoState.cidade = "";
         candidatoState.telefone = "";
         candidatoState.email = "";
         candidatoState.objetivos = "";
+        candidatoState.formacad = "";
+        candidatoState.exprof = "";
         this.setState(
             { candidato: candidatoState }
         )
@@ -101,32 +118,60 @@ class FormCadastroCurriculo extends React.Component {
             storange.setItem("candidatos", JSON.stringify(listacandidatos));
             console.log("Form submetido.");
 
-         this.resetcandidatoState(candidatoState)
+            this.resetcandidatoState(candidatoState)
         }
     }
-    
+
 
     render() {
+        const style = {
+            margin: '10px',
+            padding: '10px',
+            fontSize: '17px',
+        }
+
         let erros = this.state.validateErros
         return (
             <div>
-                {erros.map((erros, index) => (<p key={index}>{erros}</p>))}
                 <Header title="Cadastro de candidato" />
-                <form className="pure-form pure-form-stacked" onSubmit={this.handleSubmit}>
-                    <Label text="Nome:" />
-                    <Input id="nome" type="text" placeholder="Digite o nome" onChange={this.handlerInputChange} value={this.state.candidato.nome} />
-                    <Label text="Idade:" />
-                    <Input id="idade" type="text" placeholder="Digite a idade" onChange={this.handlerInputChange} value={this.state.candidato.idade} />
-                    <Label text="Cidade:" />
-                    <Input id="cidade" type="text" placeholder="Digite o cidade" onChange={this.handlerInputChange} value={this.state.candidato.cidade} />
-                    <Label text="Telefone:" />
-                    <Input id="telefone" type="text" placeholder="Digite o telefone" onChange={this.handlerInputChange} value={this.state.candidato.telefone} />
-                    <Label text="E-mail:" />
-                    <Input id="email" type="text" placeholder="Digite o e-mail" onChange={this.handlerInputChange} value={this.state.candidato.email} />
-                    <Label text="Objetivos:" />
-                    <Input id="objetivos" type="text" placeholder="Digite o objetivo" onChange={this.handlerInputChange} value={this.state.candidato.objetivos} />
-                    <Button className="pure-button pure-button-secondary" text="Gravar" />
-                </form>
+                <div style={style}>
+                    {erros.map((erros, index) => (<p key={index}>{erros}</p>))}
+                    <form className="pure-form pure-form-stacked pure-g" onSubmit={this.handleSubmit}>
+                        <div class="pure-u-1-2 pure-u-md-1-3 ">
+                            <Label text="Nome:" />
+                            <Input id="nome" className="pure-u-23-24" type="text" placeholder="Digite o nome" onChange={this.handlerInputChange} value={this.state.candidato.nome} />
+                        </div>
+                        <div class="pure-u-1-2 pure-u-md-1-3">
+                            <Label text="Idade:" />
+                            <Input id="idade" className="pure-u-23-24" type="text" placeholder="Digite a idade" onChange={this.handlerInputChange} value={this.state.candidato.idade} />
+                        </div>
+                        <div class="pure-u-1-2 pure-u-md-1-3">
+                            <Label text="Cidade:" />
+                            <Input id="cidade" className="pure-u-23-24" type="text" placeholder="Digite o cidade" onChange={this.handlerInputChange} value={this.state.candidato.cidade} />
+                        </div>
+                        <div class="pure-u-1-2 pure-u-md-1-3">
+                            <Label text="Telefone:" />
+                            <Input id="telefone" className="pure-u-23-24" type="text" placeholder="Digite o telefone" onChange={this.handlerInputChange} value={this.state.candidato.telefone} />
+                        </div>
+                        <div class="pure-u-1-2 pure-u-md-1-3">
+                            <Label text="E-mail:" />
+                            <Input id="email" className="pure-u-23-24" type="text" placeholder="Digite o e-mail" onChange={this.handlerInputChange} value={this.state.candidato.email} />
+                        </div>
+                        <div class="pure-u-1-2 pure-u-md-1-3">
+                            <Label text="Objetivos:" />
+                            <Input id="objetivos" className="pure-u-23-24" type="text" placeholder="Digite o objetivo" onChange={this.handlerInputChange} value={this.state.candidato.objetivos} />
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <Label text="Formação acadêmica:" />
+                            <Textarea id="formacad" className="pure-u-23-24" placeholder="Digite suas formações academicas" cols="25" rows="5" onChange={this.handlerInputChange} value={this.state.candidato.formacad} ></Textarea>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <Label text="Experiências profissionais:" />
+                            <Textarea id="exprof" className="pure-u-23-24" placeholder="Digite suas experiências proficionais" cols="25" rows="5" onChange={this.handlerInputChange} value={this.state.candidato.exprof} ></Textarea>
+                        </div>
+                        <Button className="button-xlarge pure-button pure-button-success" text="Gravar" />
+                    </form>
+                </div>
             </div>
         );
     }

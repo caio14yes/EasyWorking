@@ -50,19 +50,17 @@ class ListarCurriculo extends React.Component {
         }
 
         return (
-            <div>
+            <div style={style}>
                 <Button className="pure-button pure-button-primary" text="listar" onClick={this.listar} />
-                <div style={style}>
-                    <h1> Curriculum Vitae</h1>
-                    <p>Nome: {this.state.nomeCurriculum} </p>
-                    <p>Idade: {this.state.idadeCurriculum} </p>
-                    <p>Cidade: {this.state.cidadeCurriculum} </p>
-                    <p>Telefone: {this.state.telefoneCurriculum} </p>
-                    <p>E-mail: {this.state.emailCurriculum} </p>
-                    <p>Objetivos: {this.state.objetivosCurriculum} </p>
-                    <p>Formação Acadêmica: {this.state.formacadCurriculum} </p>
-                    <p>Experiências Profissionais: {this.state.exprofCurriculum} </p>
-                </div>
+                <h1> Curriculum Vitae</h1>
+                <p>Nome: {this.state.nomeCurriculum} </p>
+                <p>Idade: {this.state.idadeCurriculum} </p>
+                <p>Cidade: {this.state.cidadeCurriculum} </p>
+                <p>Telefone: {this.state.telefoneCurriculum} </p>
+                <p>E-mail: {this.state.emailCurriculum} </p>
+                <p>Objetivos: {this.state.objetivosCurriculum} </p>
+                <p>Formação Acadêmica: {this.state.formacadCurriculum} </p>
+                <p>Experiências Profissionais: {this.state.exprofCurriculum} </p>
             </div>
         );
     }
