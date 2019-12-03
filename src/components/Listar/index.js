@@ -44,7 +44,7 @@ class ListarCurriculo extends React.Component {
         const style = {
             margin: '20px',
             padding: '10px',
-            width: '50%',
+            width: '82.5%',
             border: '1px solid #333',
             fontSize: '17px',
         }
