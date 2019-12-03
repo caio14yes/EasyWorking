@@ -10,7 +10,9 @@ class ListarCurriculo extends React.Component{
             cidadeCurriculum: "",
             telefoneCurriculum: "",
             emailCurriculum: "",
-            objetivosCurriculum: ""
+            objetivosCurriculum: "",
+            formacadCurriculum: "",
+            exprofCurriculum: ""
         }
     };
 
@@ -20,14 +22,16 @@ class ListarCurriculo extends React.Component{
         let listacandidatos = JSON.parse(storange.getItem("candidatos")) || [];
 
         this.setState({
-            nomeCurriculum : listacandidatos.nome,
-            idadeCurriculum : listacandidatos.idade,
-            cidadeCurriculum : listacandidatos.cidade,
-            telefoneCurriculum : listacandidatos.telefone,
-            emailCurriculum : listacandidatos.email,
-            objetivosCurriculum : listacandidatos.objetivos,
+            nomeCurriculum : listacandidatos[0].nome,
+            idadeCurriculum : listacandidatos[0].idade,
+            cidadeCurriculum : listacandidatos[0].cidade,
+            telefoneCurriculum : listacandidatos[0].telefone,
+            emailCurriculum : listacandidatos[0].email,
+            objetivosCurriculum : listacandidatos[0].objetivos,
+            formacadCurriculum : listacandidatos[0].formacad,
+            exprofCurriculum : listacandidatos[0].exprof,
         });
-
+ 
         // console.log(this.state.nomeCurriculum)
         // console.log(this.state.idadeCurriculum)
         // console.log(this.state.cidadeCurriculum)
@@ -47,6 +51,8 @@ class ListarCurriculo extends React.Component{
                 <p>Telefone: {this.state.telefoneCurriculum} </p>
                 <p>E-mail: {this.state.emailCurriculum} </p>
                 <p>Objetivos: {this.state.objetivosCurriculum} </p>
+                <p>Formação Acadêmica: {this.state.formacadCurriculum} </p>
+                <p>Experiências Profissionais: {this.state.exprofCurriculum} </p>
             </div>
         );
     }
