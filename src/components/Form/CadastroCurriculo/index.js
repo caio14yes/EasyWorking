@@ -128,7 +128,6 @@ class FormCadastroCurriculo extends React.Component {
                     <Input id="objetivos" type="text" placeholder="Digite o objetivo" onChange={this.handlerInputChange} value={this.state.candidato.objetivos} />
                     <Button className="pure-button pure-button-secondary" text="Gravar" />
                 </form>
-                <Footer text="Todos os direitos reservados" />
             </div>
         );
     }

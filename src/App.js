@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import FormCadastroCurriculo from './components/Form/CadastroCurriculo'
 import ListarCurriculo from './components/Listar';
+import Footer from './components/Footer';
 
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
       <div>
         <FormCadastroCurriculo />
         <ListarCurriculo />
+        <Footer/>
       </div>
     );
   }
