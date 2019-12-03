@@ -167,9 +167,9 @@ class FormCadastroCurriculo extends React.Component {
                         </div>
                         <div className="pure-u-1 pure-u-md-1-3">
                             <Label text="Experiências profissionais:" />
-                            <Textarea id="exprof" className="pure-u-24-24" placeholder="Digite suas experiências proficionais" cols="25" rows="5" onChange={this.handlerInputChange} value={this.state.candidato.exprof} ></Textarea>
+                            <Textarea id="exprof" className="pure-u-24-24" placeholder="Digite suas experiências proficionais. Separe o nome de empresa, cargo e tempo com ' ; ' (ponto e vírgula)." cols="25" rows="5" onChange={this.handlerInputChange} value={this.state.candidato.exprof} ></Textarea>
                         </div>
-                        <Button className="button-xlarge pure-button pure-button-success" text="Gravar" />
+                        <Button className="pure-button pure-button-primary" text="Gravar" />
                     </form>
                 </div>
             </div>
