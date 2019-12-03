@@ -58,11 +58,11 @@ class ListarCurriculo extends React.Component {
                 <p>Cidade: {this.state.cidadeCurriculum} </p>
                 <p>Telefone: {this.state.telefoneCurriculum} </p>
                 <p>E-mail: {this.state.emailCurriculum} </p>
-                <h4>Objetivos:</h4>
+                <h4>Objetivos</h4>
                 <p>{this.state.objetivosCurriculum} </p>
-                <h4>Formação Acadêmica:</h4>
+                <h4>Formação Acadêmica</h4>
                 <p> {this.state.formacadCurriculum} </p>
-                <h4>Experiências Profissionais:</h4>
+                <h4>Experiências Profissionais</h4>
                 <p>{this.state.exprofCurriculum} </p>
             </div>
         );
