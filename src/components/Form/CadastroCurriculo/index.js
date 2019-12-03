@@ -137,37 +137,37 @@ class FormCadastroCurriculo extends React.Component {
                 <div style={style}>
                     {erros.map((erros, index) => (<p key={index}>{erros}</p>))}
                     <form className="pure-form pure-form-stacked pure-g" onSubmit={this.handleSubmit}>
-                        <div class="pure-u-1-2 pure-u-md-1-3 ">
+                        <div className="pure-u-1-2 pure-u-md-1-3 ">
                             <Label text="Nome:" />
                             <Input id="nome" className="pure-u-23-24" type="text" placeholder="Digite o nome" onChange={this.handlerInputChange} value={this.state.candidato.nome} />
                         </div>
-                        <div class="pure-u-1-2 pure-u-md-1-3">
+                        <div className="pure-u-1-2 pure-u-md-1-3">
                             <Label text="Idade:" />
                             <Input id="idade" className="pure-u-23-24" type="text" placeholder="Digite a idade" onChange={this.handlerInputChange} value={this.state.candidato.idade} />
                         </div>
-                        <div class="pure-u-1-2 pure-u-md-1-3">
+                        <div className="pure-u-1-2 pure-u-md-1-3">
                             <Label text="Cidade:" />
                             <Input id="cidade" className="pure-u-23-24" type="text" placeholder="Digite o cidade" onChange={this.handlerInputChange} value={this.state.candidato.cidade} />
                         </div>
-                        <div class="pure-u-1-2 pure-u-md-1-3">
+                        <div className="pure-u-1-2 pure-u-md-1-3">
                             <Label text="Telefone:" />
                             <Input id="telefone" className="pure-u-23-24" type="text" placeholder="Digite o telefone" onChange={this.handlerInputChange} value={this.state.candidato.telefone} />
                         </div>
-                        <div class="pure-u-1-2 pure-u-md-1-3">
+                        <div className="pure-u-1-2 pure-u-md-1-3">
                             <Label text="E-mail:" />
                             <Input id="email" className="pure-u-23-24" type="text" placeholder="Digite o e-mail" onChange={this.handlerInputChange} value={this.state.candidato.email} />
                         </div>
-                        <div class="pure-u-1-2 pure-u-md-1-3">
+                        <div className="pure-u-1-2 pure-u-md-1-3">
                             <Label text="Objetivos:" />
                             <Input id="objetivos" className="pure-u-23-24" type="text" placeholder="Digite o objetivo" onChange={this.handlerInputChange} value={this.state.candidato.objetivos} />
                         </div>
-                        <div class="pure-u-1 pure-u-md-1-3">
+                        <div className="pure-u-1 pure-u-md-1-3">
                             <Label text="Formação acadêmica:" />
-                            <Textarea id="formacad" className="pure-u-23-24" placeholder="Digite suas formações academicas" cols="25" rows="5" onChange={this.handlerInputChange} value={this.state.candidato.formacad} ></Textarea>
+                            <Textarea id="formacad" className="pure-u-24-24" placeholder="Digite suas formações academicas" cols="25" rows="5" onChange={this.handlerInputChange} value={this.state.candidato.formacad} ></Textarea>
                         </div>
-                        <div class="pure-u-1 pure-u-md-1-3">
+                        <div className="pure-u-1 pure-u-md-1-3">
                             <Label text="Experiências profissionais:" />
-                            <Textarea id="exprof" className="pure-u-23-24" placeholder="Digite suas experiências proficionais" cols="25" rows="5" onChange={this.handlerInputChange} value={this.state.candidato.exprof} ></Textarea>
+                            <Textarea id="exprof" className="pure-u-24-24" placeholder="Digite suas experiências proficionais" cols="25" rows="5" onChange={this.handlerInputChange} value={this.state.candidato.exprof} ></Textarea>
                         </div>
                         <Button className="button-xlarge pure-button pure-button-success" text="Gravar" />
                     </form>
