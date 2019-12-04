@@ -117,6 +117,7 @@ class FormCadastroCurriculo extends React.Component {
             listacandidatos.push(candidatoState);
             storange.setItem("candidatos", JSON.stringify(listacandidatos));
             console.log("Form submetido.");
+            alert("Currículo cadastrado com sucesso!");
 
             this.resetcandidatoState(candidatoState)
         }
